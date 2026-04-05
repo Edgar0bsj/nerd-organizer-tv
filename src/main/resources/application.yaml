@@ -16,6 +16,7 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
+    show-sql: true
 # H2 DataBase
   h2:
     console:
@@ -26,12 +27,12 @@ spring:
     init:
       mode: always
       data-locations: classpath:/db/data.sql
-# Hibernate
-hibernate:
-  ddl-auto: update
-  ormat_sql: true
-#SQL console view
-show-sql: true
+# Propriedades
+  properties:
+    hibernate:
+      format_sql: true
+      ddl-auto: update
+
 # Logges
 logging:
   level:
