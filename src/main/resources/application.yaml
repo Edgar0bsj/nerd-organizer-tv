@@ -1,3 +1,43 @@
 spring:
+# Aplicação
   application:
     name: nerd-organizer-tv
+# Server
+  server:
+    port: 8080
+# Data Source
+  datasource:
+    url: jdbc:h2:mem:nerdorganizer_db
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: 123
+    platform: h2
+# JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+# H2 DataBase
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+# SQL
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:/db/data.sql
+# Hibernate
+hibernate:
+  ddl-auto: update
+  ormat_sql: true
+#SQL console view
+show-sql: true
+# Logges
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql: trace
